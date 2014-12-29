@@ -1,0 +1,30 @@
+{
+  "name": "q-git",
+  "version": "0.0.1",
+  "description": "Thin Q promise wrapper for Git",
+  "main": "lib/q-git.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hadynz/q-git.git"
+  },
+  "keywords": [
+    "git",
+    "q-git",
+    "q",
+    "git",
+    "wrapper"
+  ],
+  "author": {
+    "name": "Hady Osman",
+    "email": "hadyos@gmail.com",
+    "url": "http://hady.geek.nz"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hadynz/q-git/issues"
+  },
+  "homepage": "https://github.com/hadynz/q-git"
+}
