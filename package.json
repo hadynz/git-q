@@ -4,7 +4,7 @@
   "description": "Thin Q promise wrapper for Git",
   "main": "lib/q-git.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/mocha/bin/mocha test"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/hadynz/q-git/issues"
   },
-  "homepage": "https://github.com/hadynz/q-git"
+  "homepage": "https://github.com/hadynz/q-git",
+  "dependencies": {
+    "q": "^1.1.2",
+    "shelljs": "^0.3.0"
+  }
 }
