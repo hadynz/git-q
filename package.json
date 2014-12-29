@@ -4,7 +4,7 @@
   "description": "Thin Q promise wrapper for Git",
   "main": "lib/q-git.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha test"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
