@@ -1,6 +1,6 @@
 {
   "name": "git-q",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Thin Q promise wrapper for Git",
   "main": "lib/git-q.js",
   "scripts": {

@@ -1,0 +1,6 @@
+# Config files
+.idea
+.editorconfig
+.gitignore
+.jshintrc
+.npmignore
