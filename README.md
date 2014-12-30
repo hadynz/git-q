@@ -30,8 +30,8 @@ gitQ
   .setUserInfo()
   .writeGitCredentials()
   .setRemoteUrl('https://...')
-  .fetchTags()
-  .tag('1.0.1', 'Commit message associated with tag')
+  .fetch(true)
+  .tag({ a: '1.0.1', m: 'Commit message associated with tag' })
   .pushTags()
   .catch(function(){
     // Handle any errors from any of the above steps
