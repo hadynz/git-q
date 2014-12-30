@@ -4,3 +4,7 @@
 .gitignore
 .jshintrc
 .npmignore
+.travis.yml
+
+# Folders
+test

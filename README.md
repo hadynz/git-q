@@ -51,17 +51,35 @@ This method is used whenever
 ...
 
 ### gitQ.setRemoteUrl(url, [remoteName])
-Sets a remote URL against a remote which defaults to `origin`. This method runs the following Git command:
+Sets a remote `url` against a `remoteName` which defaults to `origin`. This method runs the following Git command:
 
 ```
 git remote set-url <remoteName> <url>
 ```
 
-### gitQ.fetchTags()
-...
+### gitQ.fetch([tags])
+Runs `git fetch` with the `--tags` option if `tags` is `true`.
 
-### gitQ.tag(tagName, message)
-...
+```
+// Fetches all branch heads and all commits.
+git fetch
+
+// Fetches all tags and commits. Will not update branch heads.
+git fetch --tags
+```
+
+### gitQ.tag(options)
+Runs `git tag`. If `options` is an `Object`, method will assume it is a collection of annotated tags and append
+it to the `git tag` command after flattening the structure. If `options` is a string, command will use the latter
+and run it as a lightweight tag.
+
+```
+// Lightweight Tags
+git tag v1.4-lw
+
+// Annotated Tags
+git tag -a v1.4 -m 'my version 1.4'
+```
 
 ### gitQ.pushTags()
 ...
