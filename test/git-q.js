@@ -26,6 +26,22 @@ describe('git-q', function () {
     assert.ok(GitQ);
   });
 
+  describe('writeGitCredentials', function(){
+
+    it('runs two git commands to write to credentials file', function (done) {
+      var gitQ = new GitQ();
+      sinon.stub(gitQ, '_run', runMock);
+
+      gitQ
+        .writeGitCredentials('TOKEN')
+        .then(function(){
+          assert.equal(actual.length, 2);
+          done();
+        });
+    });
+
+  });
+
   describe('setRemoteUrl', function(){
 
     it('defaults to "origin" as remote name if one is not passed through', function (done) {

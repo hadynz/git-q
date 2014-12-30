@@ -45,12 +45,14 @@ gitQ
 Initialise a `GitQ` wrapper object for Git.
 
 ### gitQ.setUserInfo([name], [email])
-...
+Sets user `name` and `email` address globally to be available with every Git command to be used.
 
-This method is used whenever
+If no parameters are passed, `name` and `email` are fetched from the environment variables `GIT_NAME` and `GIT_EMAIL`
+respectively. These two [environment variables][5] are set by the Travis-CI build environment.GI
 
 ### gitQ.writeGitCredentials([token])
-...
+Stores current user's [credentials][4] for the given repository `token` to disk. Method assumes that repository
+token always belongs to `github.com`.
 
 ### gitQ.setRemoteUrl(url, [remoteName])
 Sets a remote `url` against a `remoteName` which defaults to `origin`. This method runs the following Git command:
@@ -84,7 +86,11 @@ git tag -a v1.4 -m 'my version 1.4'
 ```
 
 ### gitQ.pushTags()
-...
+Pushes tags to a repository by runningi the git command:
+
+```
+git push --tags
+```
 
 ## License
 
@@ -93,3 +99,5 @@ MIT
 [1]: https://github.com/kriskowal/q
 [2]: https://help.github.com/articles/about-remote-repositories/
 [3]: https://travis-ci.com/
+[4]: http://git-scm.com/docs/git-credential-store
+[5]: http://docs.travis-ci.com/user/environment-variables/
