@@ -26,6 +26,34 @@ describe('git-q', function () {
     assert.ok(GitQ);
   });
 
+  describe('setRemoteUrl', function(){
+
+    it('defaults to "origin" as remote name if one is not passed through', function (done) {
+      var gitQ = new GitQ();
+      sinon.stub(gitQ, '_run', runMock);
+
+      gitQ
+        .setRemoteUrl('https://github.com/sample/sample-repo.git')
+        .then(function(){
+          assert.strictEqual(actual[0], 'git remote set-url origin https://github.com/sample/sample-repo.git');
+          done();
+        });
+    });
+
+    it('uses a remote name if one is passed through', function (done) {
+      var gitQ = new GitQ();
+      sinon.stub(gitQ, '_run', runMock);
+
+      gitQ
+        .setRemoteUrl('https://github.com/sample/sample-repo.git', 'hadynz')
+        .then(function(){
+          assert.strictEqual(actual[0], 'git remote set-url hadynz https://github.com/sample/sample-repo.git');
+          done();
+        });
+    });
+
+  });
+
   describe('fetch', function(){
 
     it('runs without --tags when tag is not specified', function (done) {
