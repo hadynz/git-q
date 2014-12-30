@@ -1,6 +1,8 @@
 Q Git
 ==========
 
+[![Build Status](https://travis-ci.org/hadynz/git-q.svg)](https://travis-ci.org/hadynz/git-q)
+
 Thin Q promise wrapper for Git.
 
 ## About

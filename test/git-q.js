@@ -26,6 +26,34 @@ describe('git-q', function () {
     assert.ok(GitQ);
   });
 
+  describe('fetch', function(){
+
+    it('runs without --tags when tag is not specified', function (done) {
+      var gitQ = new GitQ();
+      sinon.stub(gitQ, '_run', runMock);
+
+      gitQ
+        .fetch()
+        .then(function(){
+          assert.strictEqual(actual[0], 'git fetch');
+          done();
+        });
+    });
+
+    it('runs with --tags when tag flag is passed through', function (done) {
+      var gitQ = new GitQ();
+      sinon.stub(gitQ, '_run', runMock);
+
+      gitQ
+        .fetch(true)
+        .then(function(){
+          assert.strictEqual(actual[0], 'git fetch --tags');
+          done();
+        });
+    });
+
+  });
+
   describe('tag', function () {
 
     it('runs with more than one tag option provided', function (done) {
